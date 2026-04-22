@@ -78,20 +78,20 @@ button {
 
 <body>
 
-<!-- MUSIC (Heeriye instrumental/sample link) -->
+<!-- MUSIC -->
 <audio autoplay loop>
 <source src="https://pagalworld.com.se/files/download/id/64671" type="audio/mp3">
 </audio>
 
 <!-- SLIDESHOW -->
 <div class="slideshow">
-    <img src="img1.jpg" class="slide active">
-    <img src="img2.jpg" class="slide">
-    <img src="img3.jpg" class="slide">
-    <img src="img4.jpg" class="slide">
-    <img src="img5.jpg" class="slide">
-    <img src="img6.jpg" class="slide">
-    <img src="img7.jpg" class="slide">
+    <img src="img1.jpg.jpeg" class="slide active">
+    <img src="img2.jpg.jpg" class="slide">
+    <img src="img3.jpg.jpeg" class="slide">
+    <img src="img4.jpg.jpg" class="slide">
+    <img src="img5.jpg.jpeg" class="slide">
+    <img src="img6.jpg.jpeg" class="slide">
+    <img src="img7.jpg.jpg" class="slide">
 </div>
 
 <div class="container">
@@ -101,12 +101,11 @@ button {
     <button onclick="showSurprise()">Tap for Surprise 🎁</button>
 
     <div class="hidden" id="surprise">
-        💌 Aur kuch nhi hai , bas itna hi tha ❤️
+        💌 You are rare. You are magic. And I’m lucky to have you ❤️
     </div>
 </div>
 
 <script>
-// Typing text
 const text = "Hey Purvi… 💖\n\nAnother year, another chapter — and somehow, you just keep becoming more graceful, more confident, and even more inspiring.\n\nThere’s something special about you… the way you carry yourself, the way you shine without trying, and the way you leave an impact wherever you go.\n\nYou are beautiful, not just in how you look, but in how you think, how you grow, and how you make life around you feel a little more alive.\n\nI genuinely admire that about you… and yes, I learn more from you than I probably say.\n\nOn your birthday, I just hope life gives you everything you deserve — success, happiness, peace… and of course, a little extra luxury and money on the side 😌✨\n\nStay exactly the way you are — because that’s already something rare.\n\nHappy Birthday, Purvi ❤️";
 
 let i = 0;
@@ -142,7 +141,6 @@ function createHearts() {
 }
 setInterval(createHearts, 400);
 
-// Surprise
 function showSurprise() {
     document.getElementById("surprise").style.display = "block";
 }
