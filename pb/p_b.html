@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Purvi ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background: linear-gradient(to top, #ff758c, #ff7eb3);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Slideshow */
+.slideshow {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.active {
+    opacity: 1;
+}
+
+/* Content */
+.container {
+    padding: 20px;
+}
+
+#typing {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #ff4d6d;
+    font-size: 15px;
+}
+
+.hidden {
+    display: none;
+    margin-top: 15px;
+}
+
+/* Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    animation: float 6s linear infinite;
+    color: rgba(255,255,255,0.7);
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100vh); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC (Heeriye instrumental/sample link) -->
+<audio autoplay loop>
+<source src="https://pagalworld.com.se/files/download/id/64671" type="audio/mp3">
+</audio>
+
+<!-- SLIDESHOW -->
+<div class="slideshow">
+    <img src="img1.jpg" class="slide active">
+    <img src="img2.jpg" class="slide">
+    <img src="img3.jpg" class="slide">
+    <img src="img4.jpg" class="slide">
+    <img src="img5.jpg" class="slide">
+    <img src="img6.jpg" class="slide">
+    <img src="img7.jpg" class="slide">
+</div>
+
+<div class="container">
+    <h2>Happy Birthday Purvi ❤️</h2>
+    <div id="typing"></div>
+
+    <button onclick="showSurprise()">Tap for Surprise 🎁</button>
+
+    <div class="hidden" id="surprise">
+        💌 Aur kuch nhi hai , bas itna hi tha ❤️
+    </div>
+</div>
+
+<script>
+// Typing text
+const text = "Hey Purvi… 💖\n\nAnother year, another chapter — and somehow, you just keep becoming more graceful, more confident, and even more inspiring.\n\nThere’s something special about you… the way you carry yourself, the way you shine without trying, and the way you leave an impact wherever you go.\n\nYou are beautiful, not just in how you look, but in how you think, how you grow, and how you make life around you feel a little more alive.\n\nI genuinely admire that about you… and yes, I learn more from you than I probably say.\n\nOn your birthday, I just hope life gives you everything you deserve — success, happiness, peace… and of course, a little extra luxury and money on the side 😌✨\n\nStay exactly the way you are — because that’s already something rare.\n\nHappy Birthday, Purvi ❤️";
+
+let i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML = text.substring(0, i).replace(/\n/g, "<br>");
+        i++;
+        setTimeout(typeWriter, 25);
+    }
+}
+typeWriter();
+
+// Slideshow
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+}, 3000);
+
+// Hearts
+function createHearts() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (10 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHearts, 400);
+
+// Surprise
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+}
+</script>
+
+</body>
+</html>
